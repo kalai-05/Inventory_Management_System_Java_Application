@@ -67,6 +67,11 @@ public class Menu extends javax.swing.JFrame {
 
         jButton4.setFont(new java.awt.Font("Kannada MN", 1, 14)); // NOI18N
         jButton4.setText("Manage Employees ");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -210,6 +215,14 @@ public class Menu extends javax.swing.JFrame {
         I.show();
         dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        Employee E=new Employee();
+        E.show();
+        dispose();
+        
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
