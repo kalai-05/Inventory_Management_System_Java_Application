@@ -288,7 +288,7 @@ Connection con;
             while (Rs.next()) {
                 Vector v2 = new Vector();
            
-                for (int ii = 0; ii <= CC; ii++) {
+                for (int ii = 1; ii <= CC; ii++) {
                     v2.add(Rs.getString("AdID"));
                     v2.add(Rs.getString("AdName"));
                     v2.add(Rs.getString("AdPrice"));
@@ -382,20 +382,20 @@ Connection con;
     int selectedIndex = jTable1.getSelectedRow();
     try {   
         
-    
+     int id = Integer.parseInt(model.getValueAt(selectedIndex, 0).toString());
      String AdID= txtid.getText();
      String AdName= txtname.getText();
      String AdPrice= txtprice.getText();
      String AdType= txttype.getSelectedItem().toString();
  
   
-    Class.forName("com.mysql.cj.jdbc.Driver");
+             Class.forName("com.mysql.cj.jdbc.Driver");
              con = DriverManager.getConnection("jdbc:mysql://localhost:3308/MYSHARE","root","");
              insert = con.prepareStatement("update advertisementData set  AdName= ?,AdPrice= ?,AdType= ?,where AdID= ?");
              insert.setString(1,AdName);
              insert.setString(2,AdPrice);
              insert.setString(3,AdType);
-             insert.setString(4,AdID);
+             insert.setInt(4,id);
             
                 int executeUpdate = insert.executeUpdate();
              JOptionPane.showMessageDialog(this, "Updated Succesfully");
