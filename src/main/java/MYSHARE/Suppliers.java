@@ -312,7 +312,7 @@ public class Suppliers extends javax.swing.JFrame {
     try {   
         
     int id = Integer.parseInt(model.getValueAt(selectedIndex, 0).toString());
-    String Name= txtname.getText();
+     String Name= txtname.getText();
      String Pnumber= txtnumber.getText();
      String Email= txtmail.getText();
      String Country= txtcountry.getText();
