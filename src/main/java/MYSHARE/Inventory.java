@@ -418,7 +418,7 @@ Connection con;
         // TODO add your handling code here:
         
         
-         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
         int selectedIndex = jTable1.getSelectedRow();
       
         txtid.setText(model.getValueAt(selectedIndex, 0).toString());
