@@ -347,7 +347,7 @@ public class Employee extends javax.swing.JFrame {
          DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
           int selectedIndex = jTable1.getSelectedRow();
     try {   
-        
+        int id = Integer.parseInt(model.getValueAt(selectedIndex, 0).toString());
         String EmpID= txtid.getText();
         String EmpName= txtname.getText();
         String EmpMail= txtmail.getText();
@@ -363,7 +363,7 @@ public class Employee extends javax.swing.JFrame {
              insert.setString(2,EmpMail);
              insert.setString(3,EmpNum);
              insert.setString(4,EmpSalary);
-             insert.setString(5,EmpID);
+             insert.setInt(5,id);
              insert.executeUpdate();
              JOptionPane.showMessageDialog(this, "Updated Succesfully");
              
