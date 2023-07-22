@@ -323,20 +323,20 @@ public class customer extends javax.swing.JFrame {
     try {   
         
     int id = Integer.parseInt(model.getValueAt(selectedIndex, 0).toString());
-    String Name= txtid.getText();
-     String Email= txtname.getText();
-     String Pnumber= txtprice.getText();
-     String Type= txtdate.getText();
-     String Work= txtquantity.getText();
+     String OrID= txtid.getText();
+     String OrName= txtname.getText();
+     String OrPrice= txtprice.getText();
+     String OrDate= txtdate.getText();
+     String OrQuantity= txtquantity.getText();
   
     Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3308/MYSHARE","root","");
+             con = DriverManager.getConnection("jdbc:mysql://localhost:3308/MYSHARE","root","");
              insert = con.prepareStatement("update customerData set OrID= ?,OrName= ?,OrPrice= ?,OrDate= ?,OrQuantity= ? where id= ?");
-             insert.setString(1,Name);
-             insert.setString(2,Email);
-             insert.setString(3,Pnumber);
-             insert.setString(4,Type);
-             insert.setString(5,Work);
+             insert.setString(1,OrID);
+             insert.setString(2,OrName);
+             insert.setString(3,OrPrice);
+             insert.setString(4,OrDate);
+             insert.setString(5,OrQuantity);
              insert.setInt(6, id);
                 int executeUpdate = insert.executeUpdate();
              JOptionPane.showMessageDialog(this, "Updated Succesfully");
