@@ -88,7 +88,7 @@ public class Inventory extends javax.swing.JFrame {
         jLabel5.setText("Advertisement Type");
 
         txttype.setFont(new java.awt.Font("Helvetica Neue", 1, 15)); // NOI18N
-        txttype.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Video Advertising", "Social Media Advertising", "Search Engine Advertising", "Outdoor Advertising" }));
+        txttype.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Digital Artworks", "Video Advertising", "Social Media Advertising", "Search Engine Advertising", "Digital Banners" }));
         txttype.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 txttypeItemStateChanged(evt);

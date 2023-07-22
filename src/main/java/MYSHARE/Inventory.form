@@ -185,11 +185,12 @@
               <Font name="Helvetica Neue" size="15" style="1"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Video Advertising"/>
-                <StringItem index="1" value="Social Media Advertising"/>
-                <StringItem index="2" value="Search Engine Advertising"/>
-                <StringItem index="3" value="Outdoor Advertising"/>
+              <StringArray count="5">
+                <StringItem index="0" value="Digital Artworks"/>
+                <StringItem index="1" value="Video Advertising"/>
+                <StringItem index="2" value="Social Media Advertising"/>
+                <StringItem index="3" value="Search Engine Advertising"/>
+                <StringItem index="4" value="Digital Banners"/>
               </StringArray>
             </Property>
           </Properties>
