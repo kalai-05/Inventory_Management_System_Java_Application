@@ -40,11 +40,11 @@ public class customer extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        txtid = new javax.swing.JTextField();
         txtname = new javax.swing.JTextField();
-        txtmail = new javax.swing.JTextField();
-        txtnumber = new javax.swing.JTextField();
-        txttype = new javax.swing.JTextField();
-        txtwork = new javax.swing.JTextField();
+        txtprice = new javax.swing.JTextField();
+        txtdate = new javax.swing.JTextField();
+        txtquantity = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -59,19 +59,19 @@ public class customer extends javax.swing.JFrame {
         jLabel1.setText("Manage Customer Orders ");
         jLabel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jLabel2.setText("Customer Name");
+        jLabel2.setText("Order ID");
 
-        jLabel3.setText("E-Mail");
+        jLabel3.setText("Order Name");
 
-        jLabel4.setText("Contact Number");
+        jLabel4.setText("Price");
 
-        jLabel5.setText("Order Type");
+        jLabel5.setText("Date");
 
-        jLabel6.setText("Work");
+        jLabel6.setText("Quantity");
 
-        txtname.addActionListener(new java.awt.event.ActionListener() {
+        txtid.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtnameActionPerformed(evt);
+                txtidActionPerformed(evt);
             }
         });
 
@@ -107,7 +107,7 @@ public class customer extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                         .addComponent(jButton2)
                         .addGap(39, 39, 39)
                         .addComponent(jButton3))
@@ -118,13 +118,13 @@ public class customer extends javax.swing.JFrame {
                             .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtid, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtname, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtmail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtnumber, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txttype, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtwork, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(txtprice, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtdate, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtquantity, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(26, 26, 26))
         );
         jPanel1Layout.setVerticalGroup(
@@ -132,23 +132,23 @@ public class customer extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtnumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtprice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txttype, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtdate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtwork, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtquantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
@@ -162,11 +162,11 @@ public class customer extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Cus ID", "Cus Name", "E-Mail", "Con Num", "Type", "Work"
+                "Cus ID", "Order ID", "Order Name", "Price", "Date", "Quantity"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class, java.lang.String.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -193,7 +193,7 @@ public class customer extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(66, Short.MAX_VALUE)
+                .addContainerGap(46, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 593, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -224,9 +224,9 @@ public class customer extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnameActionPerformed
+    private void txtidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtidActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtnameActionPerformed
+    }//GEN-LAST:event_txtidActionPerformed
       Connection con;
       PreparedStatement insert;
       private void table_update() {
@@ -263,34 +263,34 @@ public class customer extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
      // TODO add your handling code here:
 
-     String Name= txtname.getText();
-     String Email= txtmail.getText();
-     String Pnumber= txtnumber.getText();
-     String Type= txttype.getText();
-     String Work= txtwork.getText();
+     String OrID= txtid.getText();
+     String OrName= txtname.getText();
+     String OrPrice= txtprice.getText();
+     String OrDate= txtdate.getText();
+     String OrQuantity= txtquantity.getText();
      
       
       
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost:3308/MYSHARE","root","");
-             insert = con.prepareStatement("insert into customerData (name,email,pnumber,type,work)values(?,?,?,?,?)");
-             insert.setString(1,Name);
-             insert.setString(2,Email);
-             insert.setString(3,Pnumber);
-             insert.setString(4,Type);
-             insert.setString(5,Work);
+             insert = con.prepareStatement("insert into customerData (OrID,OrName,OrPrice,OrDate,OrQuantity)values(?,?,?,?,?)");
+             insert.setString(1,OrID);
+             insert.setString(2,OrName);
+             insert.setString(3,OrPrice);
+             insert.setString(4,OrDate);
+             insert.setString(5,OrQuantity);
              insert.executeUpdate();
              JOptionPane.showMessageDialog(this, "Added Succesfully");
              
              table_update();
              
+             txtid.setText("");
              txtname.setText("");
-             txtmail.setText("");
-             txtnumber.setText("");
-             txttype.setText("");
-             txtwork.setText("");
-             txtname.requestFocus();
+             txtprice.setText("");
+             txtdate.setText("");
+             txtquantity.setText("");
+             txtid.requestFocus();
             
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(customer.class.getName()).log(Level.SEVERE, null, ex);
@@ -306,11 +306,11 @@ public class customer extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
         int selectedIndex = jTable1.getSelectedRow();
       
-        txtname.setText(model.getValueAt(selectedIndex, 1).toString());
-        txtmail.setText(model.getValueAt(selectedIndex, 2).toString());
-        txtnumber.setText(model.getValueAt(selectedIndex, 3).toString());
-        txttype.setText(model.getValueAt(selectedIndex, 4).toString());
-        txtwork.setText(model.getValueAt(selectedIndex, 5).toString());
+        txtid.setText(model.getValueAt(selectedIndex, 1).toString());
+        txtname.setText(model.getValueAt(selectedIndex, 2).toString());
+        txtprice.setText(model.getValueAt(selectedIndex, 3).toString());
+        txtdate.setText(model.getValueAt(selectedIndex, 4).toString());
+        txtquantity.setText(model.getValueAt(selectedIndex, 5).toString());
         
         
     }//GEN-LAST:event_jTable1MouseClicked
@@ -323,11 +323,11 @@ public class customer extends javax.swing.JFrame {
     try {   
         
     int id = Integer.parseInt(model.getValueAt(selectedIndex, 0).toString());
-    String Name= txtname.getText();
-     String Email= txtmail.getText();
-     String Pnumber= txtnumber.getText();
-     String Type= txttype.getText();
-     String Work= txtwork.getText();
+    String Name= txtid.getText();
+     String Email= txtname.getText();
+     String Pnumber= txtprice.getText();
+     String Type= txtdate.getText();
+     String Work= txtquantity.getText();
   
     Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost:3308/MYSHARE","root","");
@@ -343,12 +343,12 @@ public class customer extends javax.swing.JFrame {
              
              table_update();
              
+             txtid.setText("");
              txtname.setText("");
-             txtmail.setText("");
-             txtnumber.setText("");
-             txttype.setText("");
-             txtwork.setText("");
-             txtname.requestFocus();
+             txtprice.setText("");
+             txtdate.setText("");
+             txtquantity.setText("");
+             txtid.requestFocus();
     
 } catch (ClassNotFoundException | SQLException ex) {
    
@@ -373,12 +373,12 @@ public class customer extends javax.swing.JFrame {
             insert.setInt(1,id);
             insert.executeUpdate();
             JOptionPane.showMessageDialog(this, "Record Deleted");
-            txtname.setText("");
-             txtmail.setText("");
-             txtnumber.setText("");
-             txttype.setText("");
-             txtwork.setText("");
-             txtname.requestFocus();
+            txtid.setText("");
+             txtname.setText("");
+             txtprice.setText("");
+             txtdate.setText("");
+             txtquantity.setText("");
+             txtid.requestFocus();
              table_update();
            
            }
@@ -445,10 +445,10 @@ public class customer extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField txtmail;
+    private javax.swing.JTextField txtdate;
+    private javax.swing.JTextField txtid;
     private javax.swing.JTextField txtname;
-    private javax.swing.JTextField txtnumber;
-    private javax.swing.JTextField txttype;
-    private javax.swing.JTextField txtwork;
+    private javax.swing.JTextField txtprice;
+    private javax.swing.JTextField txtquantity;
     // End of variables declaration//GEN-END:variables
 }
