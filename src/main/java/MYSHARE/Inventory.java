@@ -351,13 +351,14 @@ Connection con;
                 
             int id = Integer.parseInt(model.getValueAt(selectedIndex, 0).toString());
             int dialogResult = JOptionPane.showConfirmDialog (null, "Do you want to Delete the record","Warning",JOptionPane.YES_NO_OPTION);
-            if(dialogResult == JOptionPane.YES_OPTION){
+            if(dialogResult == JOptionPane.YES_OPTION)
+            {
 
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost:3308/MYSHARE","root","");
             insert = con.prepareStatement("delete from advertisementData where AdID = ?");
         
-            insert.setInt(1,id);
+            insert.setInt(0,id);
             insert.executeUpdate();
             JOptionPane.showMessageDialog(this, "Record Deleted");
              txtid.setText("");
