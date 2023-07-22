@@ -331,7 +331,7 @@ public class customer extends javax.swing.JFrame {
   
     Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost:3308/MYSHARE","root","");
-             insert = con.prepareStatement("update customerData set name= ?,email= ?,pnumber= ?,type= ?,work= ? where id= ?");
+             insert = con.prepareStatement("update customerData set OrID= ?,OrName= ?,OrPrice= ?,OrDate= ?,OrQuantity= ? where id= ?");
              insert.setString(1,Name);
              insert.setString(2,Email);
              insert.setString(3,Pnumber);
