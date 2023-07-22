@@ -247,11 +247,11 @@ public class customer extends javax.swing.JFrame {
            
                 for (int ii = 1; ii <= CC; ii++) {
                     v2.add(Rs.getString("id"));
-                    v2.add(Rs.getString("name"));
-                    v2.add(Rs.getString("email"));
-                    v2.add(Rs.getString("pnumber"));
-                    v2.add(Rs.getString("type"));
-                    v2.add(Rs.getString("work"));
+                    v2.add(Rs.getString("OrID"));
+                    v2.add(Rs.getString("OrName"));
+                    v2.add(Rs.getString("OrPrice"));
+                    v2.add(Rs.getString("OrDate"));
+                    v2.add(Rs.getString("OrQuantity"));
                 }
                 DFT.addRow(v2);
             }
