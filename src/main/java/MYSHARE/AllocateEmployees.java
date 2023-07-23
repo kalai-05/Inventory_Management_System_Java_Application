@@ -49,6 +49,7 @@ public class AllocateEmployees extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -66,10 +67,16 @@ public class AllocateEmployees extends javax.swing.JFrame {
         });
 
         jLabel2.setFont(new java.awt.Font("Helvetica Neue", 0, 17)); // NOI18N
-        jLabel2.setText("Select The Customer ID");
+        jLabel2.setText("Select The Order ID");
 
         jLabel3.setFont(new java.awt.Font("Helvetica Neue", 0, 17)); // NOI18N
         jLabel3.setText("Select The Employee ID");
+
+        txtCid.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCidActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("SELECT");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -127,11 +134,11 @@ public class AllocateEmployees extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Cus ID", "Emp ID"
+                "AID", "Order ID", "Emp ID"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.Integer.class
+                java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -145,6 +152,14 @@ public class AllocateEmployees extends javax.swing.JFrame {
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
+            }
+        });
+
+        jButton5.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        jButton5.setText("DELETE");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
             }
         });
 
@@ -163,11 +178,13 @@ public class AllocateEmployees extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGap(186, 186, 186)
-                                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGap(96, 96, 96)
+                                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(26, 26, 26)))))
@@ -184,8 +201,10 @@ public class AllocateEmployees extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(26, Short.MAX_VALUE))
         );
@@ -211,14 +230,14 @@ public class AllocateEmployees extends javax.swing.JFrame {
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost:3308/MYSHARE","root","");
             insert = con.createStatement();
-            ResultSet Rs = insert.executeQuery("SELECT id FROM customerData");
+            ResultSet Rs = insert.executeQuery("SELECT OrID FROM customerData");
             
             while(Rs.next()){
-                String id = Rs.getString("id");
+                String id = Rs.getString("OrID");
                 txtCid.addItem(id);
                 
             }
-        }catch(Exception e){
+        }catch(ClassNotFoundException | SQLException e){
             JOptionPane.showMessageDialog(rootPane, "Select The Customer ID? ", "Alert", 1);
         }
         
@@ -260,7 +279,8 @@ public class AllocateEmployees extends javax.swing.JFrame {
                 Vector v2 = new Vector();
            
                 for (int ii = 1; ii <= CC; ii++) {
-                    v2.add(Rs.getString("CusID"));
+                    v2.add(Rs.getString("AID"));
+                    v2.add(Rs.getString("OrID"));
                     v2.add(Rs.getString("EmpID"));
     
                 }
@@ -275,7 +295,7 @@ public class AllocateEmployees extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
          
-         String CusID= txtCid.getSelectedItem().toString();
+         String OrID= txtCid.getSelectedItem().toString();
          String EmpID= txtEid.getSelectedItem().toString();
     
      
@@ -284,8 +304,8 @@ public class AllocateEmployees extends javax.swing.JFrame {
         try {
              Class.forName("com.mysql.cj.jdbc.Driver");
              con = DriverManager.getConnection("jdbc:mysql://localhost:3308/MYSHARE","root","");
-             pre = con.prepareStatement("insert into empAllocate (CusID,EmpID)values(?,?)");
-             pre.setString(1,CusID);
+             pre = con.prepareStatement("insert into empAllocate (OrID,EmpID)values(?,?)");
+             pre.setString(1,OrID);
              pre.setString(2,EmpID);
              pre.executeUpdate();
              JOptionPane.showMessageDialog(this, "Added Succesfully");
@@ -306,6 +326,37 @@ public class AllocateEmployees extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        
+            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+            int selectedIndex = jTable1.getSelectedRow();
+            try {   
+                
+            int id = Integer.parseInt(model.getValueAt(selectedIndex, 0).toString());
+            int dialogResult = JOptionPane.showConfirmDialog (null, "Do you want to Delete the record","Warning",JOptionPane.YES_NO_OPTION);
+            if(dialogResult == JOptionPane.YES_OPTION){
+
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3308/MYSHARE","root","");
+            pre = con.prepareStatement("delete from empAllocate where AID = ?");
+        
+            pre.setInt(1,id);
+            pre.executeUpdate();
+            JOptionPane.showMessageDialog(this, "Record Deleted");
+            table_update();
+           
+           }
+
+        } catch (ClassNotFoundException | SQLException ex) {
+        
+        }
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void txtCidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCidActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCidActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -322,15 +373,11 @@ public class AllocateEmployees extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AllocateEmployees.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AllocateEmployees.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AllocateEmployees.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(AllocateEmployees.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        
         //</editor-fold>
 
         /* Create and display the form */
@@ -347,6 +394,7 @@ public class AllocateEmployees extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
