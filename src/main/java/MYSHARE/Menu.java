@@ -126,6 +126,11 @@ public class Menu extends javax.swing.JFrame {
 
         jButton8.setFont(new java.awt.Font("Kannada MN", 1, 14)); // NOI18N
         jButton8.setText("Send notification Employee");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -249,6 +254,14 @@ public class Menu extends javax.swing.JFrame {
         C.show();
         dispose();
     }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+        
+        EmployeeMail E=new EmployeeMail();
+        E.show();
+        dispose();
+    }//GEN-LAST:event_jButton8ActionPerformed
 
     /**
      * @param args the command line arguments
