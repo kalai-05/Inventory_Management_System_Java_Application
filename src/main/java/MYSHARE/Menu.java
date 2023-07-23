@@ -212,7 +212,6 @@ public class Menu extends javax.swing.JFrame {
                  // TODO add your handling code here:
                  customer cus= new customer();
                  cus.show();
-                 
                  dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
