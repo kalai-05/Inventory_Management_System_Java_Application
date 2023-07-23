@@ -322,7 +322,7 @@ public class Employee extends javax.swing.JFrame {
              txtid.requestFocus();
             
         } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(customer.class.getName()).log(Level.SEVERE, null, ex);
+           JOptionPane.showMessageDialog(rootPane, "Enter Uniqu  Emplooyee ID ? ", "Alert", 1);
                
         }
         
@@ -377,6 +377,7 @@ public class Employee extends javax.swing.JFrame {
              txtid.requestFocus();
     
 } catch (ClassNotFoundException | SQLException ex) {
+     JOptionPane.showMessageDialog(rootPane, "Select The Emplooyee ID ? ", "Warning", 2);
    
 }
         

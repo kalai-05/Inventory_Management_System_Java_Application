@@ -48,6 +48,8 @@ public class customer extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        txtmail = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jButton4 = new javax.swing.JButton();
@@ -99,11 +101,13 @@ public class customer extends javax.swing.JFrame {
             }
         });
 
+        jLabel7.setText("Cus E-Mail");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -119,13 +123,17 @@ public class customer extends javax.swing.JFrame {
                             .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtid, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtname, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtprice, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtdate, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtquantity, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtid, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE)
+                            .addComponent(txtname, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE)
+                            .addComponent(txtprice, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE)
+                            .addComponent(txtdate, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE)
+                            .addComponent(txtquantity, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE)
+                            .addComponent(txtmail))))
                 .addGap(26, 26, 26))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -149,7 +157,11 @@ public class customer extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtquantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(txtmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2)
@@ -162,11 +174,11 @@ public class customer extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Cus ID", "Order ID", "Order Name", "Price", "Date", "Quantity"
+                "Cus ID", "Order ID", "Order Name", "Price", "Date", "Quantity", "Cus Mail"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -232,7 +244,7 @@ public class customer extends javax.swing.JFrame {
       private void table_update() {
         int CC;
         try {
-             Class.forName("com.mysql.cj.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost:3308/MYSHARE","root","");
             insert = con.prepareStatement("SELECT * FROM customerData");
             ResultSet Rs = insert.executeQuery();
@@ -252,6 +264,7 @@ public class customer extends javax.swing.JFrame {
                     v2.add(Rs.getString("OrPrice"));
                     v2.add(Rs.getString("OrDate"));
                     v2.add(Rs.getString("OrQuantity"));
+                    v2.add(Rs.getString("CusMail"));
                 }
                 DFT.addRow(v2);
             }
@@ -268,18 +281,19 @@ public class customer extends javax.swing.JFrame {
      String OrPrice= txtprice.getText();
      String OrDate= txtdate.getText();
      String OrQuantity= txtquantity.getText();
-     
+     String CusMail= txtmail.getText();
       
       
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost:3308/MYSHARE","root","");
-             insert = con.prepareStatement("insert into customerData (OrID,OrName,OrPrice,OrDate,OrQuantity)values(?,?,?,?,?)");
+             insert = con.prepareStatement("insert into customerData (OrID,OrName,OrPrice,OrDate,OrQuantity,CusMail)values(?,?,?,?,?,?)");
              insert.setString(1,OrID);
              insert.setString(2,OrName);
              insert.setString(3,OrPrice);
              insert.setString(4,OrDate);
              insert.setString(5,OrQuantity);
+             insert.setString(6,CusMail);
              insert.executeUpdate();
              JOptionPane.showMessageDialog(this, "Added Succesfully");
              
@@ -290,6 +304,7 @@ public class customer extends javax.swing.JFrame {
              txtprice.setText("");
              txtdate.setText("");
              txtquantity.setText("");
+             txtmail.setText("");
              txtid.requestFocus();
             
         } catch (ClassNotFoundException | SQLException ex) {
@@ -311,6 +326,7 @@ public class customer extends javax.swing.JFrame {
         txtprice.setText(model.getValueAt(selectedIndex, 3).toString());
         txtdate.setText(model.getValueAt(selectedIndex, 4).toString());
         txtquantity.setText(model.getValueAt(selectedIndex, 5).toString());
+        txtmail.setText(model.getValueAt(selectedIndex, 6).toString());
         
         
     }//GEN-LAST:event_jTable1MouseClicked
@@ -328,16 +344,18 @@ public class customer extends javax.swing.JFrame {
      String OrPrice= txtprice.getText();
      String OrDate= txtdate.getText();
      String OrQuantity= txtquantity.getText();
+     String CusMail= txtmail.getText();
   
-    Class.forName("com.mysql.cj.jdbc.Driver");
+             Class.forName("com.mysql.cj.jdbc.Driver");
              con = DriverManager.getConnection("jdbc:mysql://localhost:3308/MYSHARE","root","");
-             insert = con.prepareStatement("update customerData set OrID= ?,OrName= ?,OrPrice= ?,OrDate= ?,OrQuantity= ? where id= ?");
+             insert = con.prepareStatement("update customerData set OrID= ?,OrName= ?,OrPrice= ?,OrDate= ?,OrQuantity= ?,CusMail=? where id= ?");
              insert.setString(1,OrID);
              insert.setString(2,OrName);
              insert.setString(3,OrPrice);
              insert.setString(4,OrDate);
              insert.setString(5,OrQuantity);
-             insert.setInt(6, id);
+             insert.setString(6,CusMail);
+             insert.setInt(7, id);
                 int executeUpdate = insert.executeUpdate();
              JOptionPane.showMessageDialog(this, "Updated Succesfully");
              
@@ -348,6 +366,7 @@ public class customer extends javax.swing.JFrame {
              txtprice.setText("");
              txtdate.setText("");
              txtquantity.setText("");
+             txtmail.setText("");
              txtid.requestFocus();
     
 } catch (ClassNotFoundException | SQLException ex) {
@@ -378,6 +397,7 @@ public class customer extends javax.swing.JFrame {
              txtprice.setText("");
              txtdate.setText("");
              txtquantity.setText("");
+             txtmail.setText("");
              txtid.requestFocus();
              table_update();
            
@@ -442,11 +462,13 @@ public class customer extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField txtdate;
     private javax.swing.JTextField txtid;
+    private javax.swing.JTextField txtmail;
     private javax.swing.JTextField txtname;
     private javax.swing.JTextField txtprice;
     private javax.swing.JTextField txtquantity;

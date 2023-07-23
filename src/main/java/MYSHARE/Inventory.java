@@ -334,7 +334,7 @@ Connection con;
              txtid.requestFocus();
             
         } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(customer.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(rootPane, "Enter Uniqu Advertisement ID ? ", "Warning", 2);
                
         }
         
@@ -384,7 +384,7 @@ Connection con;
     try {   
         
      int id = Integer.parseInt(model.getValueAt(selectedIndex, 0).toString());
-     String AdID= txtid.getText();
+   //  String AdID= txtid.getText();
      String AdName= txtname.getText();
      String AdPrice= txtprice.getText();
      String AdType= txttype.getSelectedItem().toString();
@@ -398,7 +398,7 @@ Connection con;
              insert.setString(3,AdType);
              insert.setInt(4,id);
             
-                int executeUpdate = insert.executeUpdate();
+              int executeUpdate = insert.executeUpdate();
              JOptionPane.showMessageDialog(this, "Updated Succesfully");
              
              table_update();
@@ -411,6 +411,7 @@ Connection con;
              txtid.requestFocus();
     
 } catch (ClassNotFoundException | SQLException ex) {
+    JOptionPane.showMessageDialog(rootPane, "Select The Advertisement ID ? ", "Alert", 2);
    
 }
     }//GEN-LAST:event_jButton3ActionPerformed

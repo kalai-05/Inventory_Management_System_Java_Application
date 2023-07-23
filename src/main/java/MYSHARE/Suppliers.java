@@ -318,7 +318,7 @@ public class Suppliers extends javax.swing.JFrame {
      String Country= txtcountry.getText();
      String City= txtcity.getText();
   
-    Class.forName("com.mysql.cj.jdbc.Driver");
+             Class.forName("com.mysql.cj.jdbc.Driver");
              con = DriverManager.getConnection("jdbc:mysql://localhost:3308/MYSHARE","root","");
              insert = con.prepareStatement("update SupplierData set subName= ?,supNumber= ?,supEmail= ?,supCountry= ?,supCity= ? where supID= ?");
              insert.setString(1,Name);

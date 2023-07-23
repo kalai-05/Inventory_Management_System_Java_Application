@@ -78,7 +78,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="1" attributes="0">
+              <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Group type="102" attributes="0">
                           <Component id="jButton1" min="-2" pref="81" max="-2" attributes="0"/>
@@ -96,16 +96,21 @@
                               <Component id="jLabel5" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="txtid" alignment="1" min="-2" pref="212" max="-2" attributes="0"/>
-                              <Component id="txtname" alignment="1" min="-2" pref="212" max="-2" attributes="0"/>
-                              <Component id="txtprice" alignment="0" min="-2" pref="212" max="-2" attributes="0"/>
-                              <Component id="txtdate" alignment="1" min="-2" pref="212" max="-2" attributes="0"/>
-                              <Component id="txtquantity" alignment="0" min="-2" pref="212" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="txtid" alignment="0" pref="212" max="32767" attributes="0"/>
+                              <Component id="txtname" alignment="0" pref="212" max="32767" attributes="0"/>
+                              <Component id="txtprice" alignment="0" pref="212" max="32767" attributes="0"/>
+                              <Component id="txtdate" alignment="0" pref="212" max="32767" attributes="0"/>
+                              <Component id="txtquantity" alignment="0" pref="212" max="32767" attributes="0"/>
+                              <Component id="txtmail" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
                   <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <Component id="jLabel7" min="-2" pref="71" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -136,7 +141,12 @@
                       <Component id="jLabel6" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
                       <Component id="txtquantity" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="78" max="32767" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtmail" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="43" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -218,6 +228,13 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
           </Events>
         </Component>
+        <Component class="javax.swing.JLabel" name="jLabel7">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Cus E-Mail"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtmail">
+        </Component>
       </SubComponents>
     </Container>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">
@@ -231,17 +248,23 @@
           <Properties>
             <Property name="autoCreateRowSorter" type="boolean" value="true"/>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="6" rowCount="0">
+              <Table columnCount="7" rowCount="0">
                 <Column editable="true" title="Cus ID" type="java.lang.Integer"/>
                 <Column editable="true" title="Order ID" type="java.lang.String"/>
                 <Column editable="true" title="Order Name" type="java.lang.String"/>
                 <Column editable="true" title="Price" type="java.lang.String"/>
                 <Column editable="true" title="Date" type="java.lang.String"/>
                 <Column editable="true" title="Quantity" type="java.lang.Integer"/>
+                <Column editable="true" title="Cus Mail" type="java.lang.String"/>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
               <TableColumnModel selectionModel="0">
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
                 <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                   <Title/>
                   <Editor/>
