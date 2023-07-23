@@ -392,7 +392,7 @@ Connection con;
   
              Class.forName("com.mysql.cj.jdbc.Driver");
              con = DriverManager.getConnection("jdbc:mysql://localhost:3308/MYSHARE","root","");
-             insert = con.prepareStatement("update advertisementData set  AdName= ?,AdPrice= ?,AdType= ?,where AdID= ?");
+             insert = con.prepareStatement("update advertisementData set  AdName= ?,AdPrice= ?,AdType= ? where AdID= ?");
              insert.setString(1,AdName);
              insert.setString(2,AdPrice);
              insert.setString(3,AdType);

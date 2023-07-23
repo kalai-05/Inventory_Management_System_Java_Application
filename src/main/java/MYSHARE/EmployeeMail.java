@@ -242,7 +242,7 @@ public class EmployeeMail extends javax.swing.JFrame {
                 var OrName=Rs.getString(3);
                 var OrDate=Rs.getString(5);
                 var OrQuantity=Rs.getString(6);
-               txtarea.setText("Dear "+EmpName +",\n\nNew Order Has Been Allocated  "+" \n\nORDER ID IS -"+OrID+"\nOrder  IS -"+OrName+"\nOrdered Date -"+OrDate+"\nOrdered Quantity is  -"+OrQuantity+"\n\nService department,\nMYSHARE");
+                txtarea.setText("Dear "+EmpName +",\nNew Order Has Been Allocated  "+" \n\nORDER ID IS -"+OrID+"\nOrder  IS -"+OrName+"\nOrdered Date -"+OrDate+"\nOrdered Quantity is  -"+OrQuantity+"\n\nManager,\nMYSHARE");
              }
             Rs.close();
             insert.close();
@@ -295,7 +295,7 @@ public class EmployeeMail extends javax.swing.JFrame {
 
             message.addRecipient(Message.RecipientType.TO,new InternetAddress(TO));
             
-             message.setSubject("YOU ARE ALLOCATED");
+             message.setSubject("NEW ORDER ALLOCATED");
 
             message.setText(Body);
           

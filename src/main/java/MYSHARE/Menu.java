@@ -115,6 +115,11 @@ public class Menu extends javax.swing.JFrame {
 
         jButton6.setFont(new java.awt.Font("Kannada MN", 1, 14)); // NOI18N
         jButton6.setText("Monthly Reports ");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         jButton7.setFont(new java.awt.Font("Kannada MN", 1, 14)); // NOI18N
         jButton7.setText("Send notification customer ");
@@ -261,6 +266,13 @@ public class Menu extends javax.swing.JFrame {
         E.show();
         dispose();
     }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+        MonthlyReports M=new MonthlyReports();
+        M.show();
+        dispose();
+    }//GEN-LAST:event_jButton6ActionPerformed
 
     /**
      * @param args the command line arguments

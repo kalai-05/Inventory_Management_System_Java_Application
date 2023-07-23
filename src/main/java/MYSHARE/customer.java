@@ -41,7 +41,6 @@ public class customer extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         txtid = new javax.swing.JTextField();
-        txtname = new javax.swing.JTextField();
         txtprice = new javax.swing.JTextField();
         txtdate = new javax.swing.JTextField();
         txtquantity = new javax.swing.JTextField();
@@ -50,6 +49,7 @@ public class customer extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         txtmail = new javax.swing.JTextField();
+        txtname = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jButton4 = new javax.swing.JButton();
@@ -103,6 +103,8 @@ public class customer extends javax.swing.JFrame {
 
         jLabel7.setText("Cus E-Mail");
 
+        txtname.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Digital Artworks", "Video Advertising", "Social Media Advertising", "Search Engine Advertising", "Digital Banners" }));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -125,11 +127,11 @@ public class customer extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtid, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE)
-                            .addComponent(txtname, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE)
                             .addComponent(txtprice, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE)
                             .addComponent(txtdate, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE)
                             .addComponent(txtquantity, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE)
-                            .addComponent(txtmail))))
+                            .addComponent(txtmail)
+                            .addComponent(txtname, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(26, 26, 26))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -138,21 +140,27 @@ public class customer extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(7, 7, 7)
+                        .addComponent(txtid)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtname, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtprice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(7, 7, 7)
+                        .addComponent(txtprice)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtdate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(7, 7, 7)
+                        .addComponent(txtdate)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -161,7 +169,7 @@ public class customer extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(txtmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addGap(43, 43, 43)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2)
@@ -255,7 +263,7 @@ public class customer extends javax.swing.JFrame {
             DFT.setRowCount(0);
 
             while (Rs.next()) {
-                Vector v2 = new Vector();
+                   Vector v2 = new Vector();
            
                 for (int ii = 1; ii <= CC; ii++) {
                     v2.add(Rs.getString("id"));
@@ -277,7 +285,7 @@ public class customer extends javax.swing.JFrame {
      // TODO add your handling code here:
 
      String OrID= txtid.getText();
-     String OrName= txtname.getText();
+     String OrName= txtname.getSelectedItem().toString();
      String OrPrice= txtprice.getText();
      String OrDate= txtdate.getText();
      String OrQuantity= txtquantity.getText();
@@ -300,7 +308,7 @@ public class customer extends javax.swing.JFrame {
              table_update();
              
              txtid.setText("");
-             txtname.setText("");
+             txtname.setSelectedItem(null);
              txtprice.setText("");
              txtdate.setText("");
              txtquantity.setText("");
@@ -322,7 +330,7 @@ public class customer extends javax.swing.JFrame {
         int selectedIndex = jTable1.getSelectedRow();
       
         txtid.setText(model.getValueAt(selectedIndex, 1).toString());
-        txtname.setText(model.getValueAt(selectedIndex, 2).toString());
+        txtname.setSelectedItem(model.getValueAt(selectedIndex, 2).toString());
         txtprice.setText(model.getValueAt(selectedIndex, 3).toString());
         txtdate.setText(model.getValueAt(selectedIndex, 4).toString());
         txtquantity.setText(model.getValueAt(selectedIndex, 5).toString());
@@ -340,7 +348,7 @@ public class customer extends javax.swing.JFrame {
         
     int id = Integer.parseInt(model.getValueAt(selectedIndex, 0).toString());
      String OrID= txtid.getText();
-     String OrName= txtname.getText();
+     String OrName= txtname.getSelectedItem().toString();
      String OrPrice= txtprice.getText();
      String OrDate= txtdate.getText();
      String OrQuantity= txtquantity.getText();
@@ -362,7 +370,7 @@ public class customer extends javax.swing.JFrame {
              table_update();
              
              txtid.setText("");
-             txtname.setText("");
+             txtname.setSelectedItem(null);
              txtprice.setText("");
              txtdate.setText("");
              txtquantity.setText("");
@@ -393,7 +401,7 @@ public class customer extends javax.swing.JFrame {
             insert.executeUpdate();
             JOptionPane.showMessageDialog(this, "Record Deleted");
             txtid.setText("");
-             txtname.setText("");
+             txtname.setSelectedItem(null);
              txtprice.setText("");
              txtdate.setText("");
              txtquantity.setText("");
@@ -469,7 +477,7 @@ public class customer extends javax.swing.JFrame {
     private javax.swing.JTextField txtdate;
     private javax.swing.JTextField txtid;
     private javax.swing.JTextField txtmail;
-    private javax.swing.JTextField txtname;
+    private javax.swing.JComboBox<String> txtname;
     private javax.swing.JTextField txtprice;
     private javax.swing.JTextField txtquantity;
     // End of variables declaration//GEN-END:variables

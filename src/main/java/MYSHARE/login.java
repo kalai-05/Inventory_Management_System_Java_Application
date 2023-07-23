@@ -139,10 +139,10 @@ public class login extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
-         if (txtname.getText().equalsIgnoreCase("myshare")) {
-            if (txtpassword.getText().equalsIgnoreCase("1234")) {
+         if (txtname.getText().equals("myshare")) {
+            if (txtpassword.getText().equals("1234")) {
                try {
                     new Menu().setVisible(true);
                 } catch (Exception ex) {
@@ -155,9 +155,9 @@ public class login extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(null, "Enter the valid Use Name");
         }
-    //GEN-LAST:event_loginBtnActionPerformed
+                                            
 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }                                        
 
     /**
      * @param args the command line arguments

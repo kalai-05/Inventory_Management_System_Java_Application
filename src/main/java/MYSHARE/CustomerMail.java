@@ -227,7 +227,7 @@ public class CustomerMail extends javax.swing.JFrame {
                 int OrQuantity=Rs.getInt(6);
                 int total=OrPrice * OrQuantity;
                 
-                txtarea.setText("Dear Customer, \n\nCustomer ID IS ="+CusID+"\nOrder ID IS ="+OrID+"\nOrder Nmae IS ="+OrName+"\nTotal Price IS ="+total+"\nYour Order is ready to collect. \nPlease provide the receipt at the \ncollection point to validate.\n\nService department,\nMYSHARE");
+                txtarea.setText("Dear Customer, \nYour Order is ready to collect.\nPlease go through the following details regarding your order. \n\nCustomer ID IS ="+CusID+"\nOrder ID IS ="+OrID+"\nOrder Nmae IS ="+OrName+"\nTotal Price IS ="+total+" \n\nPlease provide the receipt at the \ncollection point to validate.\n\nCustomer Service department,\nMYSHARE");
                 
                 }
 
@@ -283,7 +283,9 @@ public class CustomerMail extends javax.swing.JFrame {
             Transport.send(message);
             
             JOptionPane.showMessageDialog(rootPane, "Message sent successfully.", "Alert", 1);
-            
+            txtto.setText("");
+            txtarea.setText("");
+            txtCid.setSelectedItem(null);
         } catch (HeadlessException | MessagingException ex) {
             ex.printStackTrace();
         }
